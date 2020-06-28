@@ -1,0 +1,31 @@
+git的基本操作信息：
+
+linux中 复制： ctrl +insert
+        黏贴： shift+insert
+        创建文件： touch 文件名
+
+1. 获取git本地版仓库  
+-- git init 文件     表示在当前文件夹创建本地仓库。如果出现.git则代表创建成功，里面的信息不要随意改变。
+2. 在当前文件夹下新建一个仓库名称，并且使用该仓库名称文件夹作为本地仓库 
+-- git init -bare{仓库名称}
+3. 创建xx目录，并且将共享版本的仓库复制到xx目录下，并且后续提交的时候，从哪里clone来的，就提交到哪里去。 
+   clone的时候，用户目录必须是为空
+-- git clone {xx.git} 
+4. 查看工作去相对于暂存区的变化
+-- git status
+5. 将文件的变化以及新增文件由工作区提交到暂存区
+-- git add 文件名
+-- git add firstcommit.md 提交单个文件
+-- git add *.md 提交某个类型的文件
+-- git add usr/git-test/* 提交某个目录下的文件
+注意： 没有add的时候是红色，但是add之后，就会变成 new file 绿色
+6. 将暂缓区的内容change提交到本地仓库
+-- git commit -m "提交信息"
+7. 查看提交信息
+-- git log
+8. 将本地仓库的内通提交到远程共享版本库
+-- git push
+9. 拉取远程共享版本库的内容到本地仓库
+-- git pull
+
+
