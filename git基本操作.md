@@ -20,20 +20,23 @@ linux中 复制： ctrl +insert
 -- git status
 
 5. 将文件的变化以及新增文件由工作区提交到暂存区
--- git add 文件名
--- git add firstcommit.md 提交单个文件
--- git add *.md 提交某个类型的文件
--- git add usr/git-test/* 提交某个目录下的文件
-注意： 没有add的时候是红色，但是add之后，就会变成 new file 绿色
+  -- git add 文件名
+  -- git add firstcommit.md 提交单个文件
+
+  -- git add *.md 提交某个类型的文件*
+
+  -- git add. 提交全部信息
+  -- git add usr/git-test/* 提交某个目录下的文件
+  注意： 没有add的时候是红色，但是add之后，就会变成 new file 绿色
 
 6. 将暂缓区的内容change提交到本地仓库
--- git commit -m "提交信息"
+  -- git commit -m "提交信息"
 
 7. 查看提交信息
--- git log
+  -- git log
 
 8. 将本地仓库的内通提交到远程共享版本库
--- git push
+  -- git push
 
 9. 拉取远程共享版本库的内容到本地仓库
--- git pull
+  -- git pull
