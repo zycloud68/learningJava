@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- bean definitions here -->
+    <context:component-scan base-package="com.cs"/>
+    <!--当我们不使用注解的情况下，可以使用一下的xml形式-->
+    <!--被代理类-->
+    <bean id=" userDao " class="com.cs.dao.UserDaoImpl"/>
+    <!--通知对象-->
+    <bean id="customAdvice" class="com.cs.aop.CustomAdvice"/>
+      <!-- 生成一个代理对象-->
+    <bean id="userDaoProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="userDaoImpl"/>
+        <property name="interceptorNames" value="customAdvice"/>
+    </bean>
+
+</beans>
