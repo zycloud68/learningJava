@@ -7,7 +7,7 @@
 1. Stream自己不会存储元素.
 2. Stream**不会改变源对象**,相反,它们**会返回一个持有结果的新Stream**.
 3. Stream操作是**延迟执行**的,这意味着它们会等到需要结果的时候才执行.
-
+### 创建Stream
 ```java
 // 一. 创建Stream
 1. 可以通过Collection系列提供的Stream()或者paralleleStream()
@@ -21,6 +21,7 @@ Stream<String> stream = Stream.of("aa","bb","cc");
 4. 创建无限流(没有穷尽)
 Stream.literator()
 ```
+### 中间操作
 
 ```java
 // 二. 中间操作
